@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architekturvisualisierung Midjourney Promptgenerator</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #output {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #links {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Architekturvisualisierung Midjourney Promptgenerator</h1>
+  </header>
+
+ <form id="architectureForm">
+    <label for="lighting">Beleuchtungssituation:</label>
+    <select id="lighting" name="lighting">
+      <option value="Spotlight">Spotlight</option>
+      <option value="Gegenlicht">Gegenlicht</option>
+      <option value="Flutlicht">Flutlicht</option>
+      <option value="Natürliches Licht">Natürliches Licht</option>
+      <option value="Volumetrische Beleuchtung">Volumetrische Beleuchtung</option>
+      <option value="Gedämpftes Licht">Gedämpftes Licht</option>
+      <option value="Direktes Sonnenlicht">Direktes Sonnenlicht</option>
+      <option value="Nordlicht">Nordlicht</option>
+      <option value="Low-Key-Beleuchtung">Low-Key-Beleuchtung</option>
+      <option value="Global Illumination">Global Illumination</option>
+      <option value="Ray Traced Shadows">Ray Traced Shadows</option>
+      <option value="Filmische Beleuchtung">Filmische Beleuchtung</option>
+      <option value="Neonlicht">Neonlicht</option>
+      <option value="Stimmungslicht">Stimmungslicht</option>
+      <option value="Wärmendes Licht">Wärmendes Licht</option>
+      <option value="Nachtlicht">Nachtlicht</option>
+    </select><br>
+    
+    <label for="architectureStyle">Architekturstil:</label>
+    <select id="architectureStyle" name="architectureStyle">
+      <option value="Brutalismus">Brutalismus</option>
+      <option value="Googie">Googie</option>
+      <option value="Klassische Architektur">Klassische Architektur</option>
+      <option value="Gotische Architektur">Gotische Architektur</option>
+      <option value="Internationaler Stil">Internationaler Stil</option>
+      <option value="Bauhaus">Bauhaus</option>
+      <option value="Georgianische Architektur">Georgianische Architektur</option>
+      <option value="Art Deco">Art Deco</option>
+      <option value="High-Tech-Architektur">High-Tech-Architektur</option>
+      <option value="Modernismus-Architektur">Modernismus-Architektur</option>
+      <option value="Organische Architektur">Organische Architektur</option>
+      <option value="Dark Ästhetik">Dark Ästhetik</option>
+      <option value="Retro-Futurismus">Retro-Futurismus</option>
+      <option value="Futurismus">Futurismus</option>
+      <option value="Zeitgenössische Architektur">Zeitgenössische Architektur</option>
+      <option value="Industriearchitektur">Industriearchitektur</option>
+      <option value="Mecha Gebäude">Mecha Gebäude</option>
+    </select><br>
+    
+    <label for="architectName">Name des Architekten als Stil:</label>
+    <select id="architectName" name="architectName">
+      <option value="Richard Rogers">Richard Rogers</option>
+      <option value="Frank Lloyd Wright">Frank Lloyd Wright</option>
+      <option value="Zaha Hadid">Zaha Hadid</option>
+      <option value="Frank Gehry">Frank Gehry</option>
+      <option value="Le Corbusier">Le Corbusier</option>
+      <option value="Norman Foster">Norman Foster</option>
+      <option value="Renzo Piano">Renzo Piano</option>
+      <option value="Tadao Ando">Tadao Ando</option>
+      <option value="Bjarke Ingels">Bjarke Ingels</option>
+      <option value="Peter Zumthor">Peter Zumthor</option>
+      <option value="Alejandro Aravena">Alejandro Aravena</option>
+      <option value="Rem Koolhaas">Rem Koolhaas</option>
+      <option value="Antoni Gaudí">Antoni Gaudí</option>
+      <option value="Bernard Tschumi">Bernard Tschumi</option>
+      <option value="SANAA architects">SANAA architects</option>
+      <option value="OMA Architecture">OMA Architecture</option>
+      <option value="David Chipperfield">David Chipperfield</option>
+      <option value="Diébédo Francis Kéré">Diébédo Francis Kéré</option>
+      <option value="Kazuyo Sejima">Kazuyo Sejima</option>
+      <option value="Shigeru Ban">Shigeru Ban</option>
+      <option value="Santiago Calatrava">Santiago Calatrava</option>
+      <option value="Ricardo Bofill">Ricardo Bofill</option>
+      <option value="Vincent Callebaut">Vincent Callebaut</option>
+      <option value="Walter Gropius">Walter Gropius</option>
+      <option value="Kengo Kuma">Kengo Kuma</option>
+      <option value="Moshe Safdie">Moshe Safdie</option>
+      <option value="Bernard Tschumi">Bernard Tschumi</option>
+    </select><br>
+    
+    <label for="renderingStyle">Darstellungsstil:</label>
+    <select id="renderingStyle" name="renderingStyle">
+      <option value="mir rendering">mir rendering</option>
+      <option value="octane render">octane render</option>
+      <option value="blender">blender</option>
+      <option value="corona render">corona render</option>
+      <option value="3ds max">3ds max</option>
+      <option value="architektur skizze">architektur skizze</option>
+      <option value="aquarell Architektur">aquarell Architektur</option>
+      <option value="Konzeptkunst">Konzeptkunst</option>
+      <option value="japanische Comics">japanische Comics</option>
+      <option value="Tusche-Rendering">Tusche-Rendering</option>
+      <option value="Unreal-Rendering">Unreal-Rendering</option>
+      <option value="Fotorealismus">Fotorealismus</option>
+      <option value="Hyperrealismus">Hyperrealismus</option>
+      <option value="Pop Art">Pop Art</option>
+      <option value="Impressionistische Landschaften">Impressionistische Landschaften</option>
+      <option value="Plastisches Rohmodell">Plastisches Rohmodell</option>
+      <option value="Flache Illustration">Flache Illustration</option>
+      <option value="Studio Ghibli">Studio Ghibli</option>
+      <option value="Digitale Malerei">Digitale Malerei</option>
+      <option value="Isometrische Illustration">Isometrische Illustration</option>
+      <option value="Realistisch">Realistisch</option>
+      <option value="Visuelle Rhetorik">Visuelle Rhetorik</option>
+    </select><br>
+    
+    <label for="view">Ansicht:</label>
+    <select id="view" name="view">
+      <option value="Draufsicht">Draufsicht</option>
+      <option value="Seitenansicht">Seitenansicht</option>
+      <option value="Luftaufnahme">Luftaufnahme</option>
+      <option value="Nahaufnahme">Nahaufnahme</option>
+      <option value="Ich-Perspektive">Ich-Perspektive</option>
+      <option value="Drei-Personen-Ansicht">Drei-Personen-Ansicht</option>
+      <option value="Zwei-Punkt-Perspektive">Zwei-Punkt-Perspektive</option>
+      <option value="Perspektive">Perspektive</option>
+      <option value="Explosionsdarstellung">Explosionsdarstellung</option>
+      <option value="Hochwinkel">Hochwinkel</option>
+      <option value="Isometrie">Isometrie</option>
+      <option value="Axonometrie">Axonometrie</option>
+    </select><br>
+    
+    <label for="facade">Fassade/Material:</label>
+    <select id="facade" name="facade">
+      <option value="Glas">Glas</option>
+      <option value="photovoltaisches Glas">photovoltaisches Glas</option>
+      <option value="dynamisches Glas">dynamisches Glas</option>
+      <option value="Metall">Metall</option>
+      <option value="Stein">Stein</option>
+      <option value="Ziegel">Ziegel</option>
+      <option value="Kalkstein">Kalkstein</option>
+      <option value="Holz">Holz</option>
+      <option value="Beton">Beton</option>
+      <option value="Keramik">Keramik</option>
+      <option value="Verbundwerkstoffe">Verbundwerkstoffe</option>
+      <option value="Ethylentetrafluorethylen">Ethylentetrafluorethylen</option>
+      <option value="Polytetrafluorethylen">Polytetrafluorethylen</option>
+      <option value="Kohlefaser">Kohlefaser</option>
+      <option value="Nanogel">Nanogel</option>
+      <option value="Titandioxid">Titandioxid</option>
+      <option value="Metallgewebe Illumesh">Metallgewebe Illumesh</option>
+      <option value="Perforierte Metallplatten">Perforierte Metallplatten</option>
+      <option value="Hydraulische Fliesen">Hydraulische Fliesen</option>
+    </select><br>
+    
+    <label for="environment">Umgebung:</label>
+    <select id="environment" name="environment">
+      <option value="Wüste">Wüste</option>
+      <option value="Dünen">Dünen</option>
+      <option value="Gletscher">Gletscher</option>
+      <option value="Wald">Wald</option>
+      <option value="Feuchtgebiet">Feuchtgebiet</option>
+      <option value="Berge">Berge</option>
+      <option value="Klippe">Klippe</option>
+      <option value="Ufer">Ufer</option>
+      <option value="Küste">Küste</option>
+      <option value="Strand">Strand</option>
+      <option value="Hügeliges Gelände">Hügeliges Gelände</option>
+      <option value="Grasland">Grasland</option>
+      <option value="Tal">Tal</option>
+      <option value="Stadtlandschaft">Stadtlandschaft</option>
+      <option value="Mars">Mars</option>
+      <option value="Planet">Planet</option>
+      <option value="Im Weltraum">Im Weltraum</option>
+      <option value="Straßenecke">Straßenecke</option>
+      <option value="Blick auf die Straße">Blick auf die Straße</option>
+      <option value="Innenstadt">Innenstadt</option>
+      <option value="Grenzübergang">Grenzübergang</option>
+      <option value="Verlassene Fabrik">Verlassene Fabrik</option>
+      <option value="Tropischer Regenwald">Tropischer Regenwald</option>
+      <option value="Realistischer Nebel">Realistischer Nebel</option>
+      <option value="Stimmungsvolle neblige Umgebung">Stimmungsvolle neblige Umgebung</option>
+      <option value="Auf dem Wasser schwimmend">Auf dem Wasser schwimmend</option>
+      <option value="Atmosphärisch">Atmosphärisch</option>
+      <option value="Winter">Winter</option>
+      <option value="Regnerisch">Regnerisch</option>
+      <option value="Herbst">Herbst</option>
+    </select><br>
+  </form>
+  <div id="links">
+    <a id="Midjourney" href="https://discord.gg/midjourney" target="_blank">Zu Midjourney</a>
+    <button onclick="generateText()">Befehl generieren</button>
+    <button onclick="copyToClipboard()">Befehl kopieren</button>
+  </div>
+  
+  <textarea id="generatedText" rows="4" cols="50"></textarea>
+
+  <script>
+    function generateText() {
+      const lighting = document.getElementById("lighting").value;
+      const architectureStyle = document.getElementById("architectureStyle").value;
+      const architectName = document.getElementById("architectName").value;
+      const renderingStyle = document.getElementById("renderingStyle").value;
+      const view = document.getElementById("view").value;
+      const facade = document.getElementById("facade").value;
+      const environment = document.getElementById("environment").value;
+
+      const generatedText = ` ${lighting}, ${architectureStyle}, ${architectName}, ${renderingStyle}, ${view}, ${facade}, ${environment}`;
+      document.getElementById("generatedText").value = generatedText;
+    }
+
+    function copyToClipboard() {
+      const textArea = document.getElementById("generatedText");
+      textArea.select();
+      document.execCommand("copy");
+    }
+  </script>
+</body>
+</html>
